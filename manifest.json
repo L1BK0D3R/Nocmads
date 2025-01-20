@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Ad Blocker for Channel Myanmar",
+  "version": "1.0",
+  "description": "Blocks ads on https://www.channelmyanmar.to/ with an on/off toggle.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://www.channelmyanmar.to/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.channelmyanmar.to/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
